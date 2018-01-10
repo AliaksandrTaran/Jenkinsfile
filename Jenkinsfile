@@ -1,5 +1,5 @@
 node('Exacnode'){ 
-   def scannerHome = tool 'SonarQubeScanner';
+   def scannerHome = tool 'SonarQubeScanner'
    stage('Preparation') {
 
 	git url: 'https://github.com/LearnShareKnowledge/demo_1.git', branch: 'master' 
@@ -11,7 +11,7 @@ node('Exacnode'){
    
    stage('Send code to Sonar') {
       sh "${scannerHome}/bin/sonar-scanner"
-    } 
+     
     
    }
 
