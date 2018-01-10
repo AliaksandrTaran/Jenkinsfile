@@ -2,7 +2,7 @@ node('Exacnode'){
    def scannerHome = tool 'SonarQubeScanner'
    stage('Preparation') {
 
-	git url: 'https://github.com/LearnShareKnowledge/demo_1.git', branch: 'master' 
+	git url: 'https://github.com/AliaksandrTaran/demo_1.git', branch: 'master' 
    }
    
    stage('Build') {
