@@ -1,4 +1,5 @@
 node('Exacnode'){
+   def sonarqubeScannerHome = tool 'SonarQubeScanner';
    stage('Preparation') {
 
 	git url: 'https://github.com/LearnShareKnowledge/demo_1.git', branch: 'master' 
@@ -8,7 +9,7 @@ node('Exacnode'){
    	sh 'chmod 755 LearnShareKnowledgeDemoProject/gradlew;cd LearnShareKnowledgeDemoProject/;./gradlew clean build'       
    }
    
-   stage('Results') {
+   stage('Send code to Sonar') {
    
    }
 
