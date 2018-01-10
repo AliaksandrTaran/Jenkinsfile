@@ -9,8 +9,9 @@ node('Exacnode'){
    }
    
    stage('Send code to Sonar') {
-   def sonarqubeScannerHome = tool 'SonarQubeScanner';
+   def sonarqubeScannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
    
+    
    }
 
 }
