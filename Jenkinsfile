@@ -10,8 +10,8 @@ node('Exacnode'){
    }
    stage('Signing project'){
         signAndroidApks (
-        keyStoreId: "myApp.signerKeyStore",
-        keyAlias: "myTeam",
+        keyStoreId: "debug.keystore",
+        keyAlias: "android",
         apksToSign: "**/*app-release-unsigned.apk"
 	)
 	
