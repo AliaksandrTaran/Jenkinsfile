@@ -14,7 +14,7 @@ node('Exacnode'){
         keyAlias: "myTeam",
         apksToSign: "**/*app-release-unsigned.apk"
 	)
-	}
+	
    }
    
    stage('Send code to Sonar') {
