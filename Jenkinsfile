@@ -21,5 +21,8 @@ node('Exacnode'){
    stage('Send code to Sonar') {
       sh "${scannerHome}/bin/sonar-scanner -Dsonar.login=sonar -Dsonar.password=sonar -Dsonar.sources=. -Dsonar.projectVersion=1.0 -Dsonar.projectKey=my_project -Dsonar.projectName=my_project -Dsonar.jdbc.username=sonar -Dsonar.jdbc.password=sonar" 
    }
+   stage('Upload to Nexus'){
+      sh "curl --user nexus:nexus -T ${workspace}/SignApksBuilder-out/zipalign/* http://10.6.211.142:8081/repository/mob-app/"
+   }
 
 }
