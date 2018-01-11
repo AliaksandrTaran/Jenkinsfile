@@ -24,5 +24,7 @@ node('Exacnode'){
    stage('Upload to Nexus'){
       sh "for file in `ls ${workspace}/SignApksBuilder-out/zipalign/`;do curl -v --user nexus:nexus -T ${workspace}/SignApksBuilder-out/zipalign/$file http://10.6.211.142:8081/repository/mob-app/$file; done"
    }
-
+   stage('Last Step'){
+   sh "echo Sucess!"
+   }
 }
